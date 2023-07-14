@@ -1,4 +1,4 @@
-package com.bdtd.ccg;
+package com.bdtd.ccg.utils;
 
 import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothAdapter;
@@ -7,6 +7,8 @@ import android.bluetooth.BluetoothManager;
 import android.bluetooth.BluetoothProfile;
 import android.content.Context;
 import android.widget.Toast;
+
+import com.bdtd.ccg.model.BluetoothDevModel;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;

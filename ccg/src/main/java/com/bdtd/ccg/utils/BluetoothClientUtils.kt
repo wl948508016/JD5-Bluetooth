@@ -1,4 +1,4 @@
-package com.bdtd.ccg
+package com.bdtd.ccg.utils
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -16,6 +16,8 @@ import android.provider.Settings
 import android.util.Log
 import android.widget.Toast
 import com.bdtd.ccg.common.HexUtil
+import com.bdtd.ccg.model.BluetoothDevModel
+import com.bdtd.ccg.ui.TipDialog
 import java.util.*
 
 /**

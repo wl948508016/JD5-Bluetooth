@@ -1,4 +1,4 @@
-package com.bdtd.ccg;
+package com.bdtd.ccg.ui;
 
 import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
@@ -9,6 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bdtd.ccg.R;
+import com.bdtd.ccg.model.BluetoothDevModel;
 
 import java.util.ArrayList;
 import java.util.List;
