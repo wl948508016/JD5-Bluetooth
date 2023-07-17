@@ -146,9 +146,7 @@ class BluetoothDialog private constructor() {
                 var info = ""
                 if (msg.contains("257")) { info = "${msg}(短时间内连接次数过多)" } else { info = msg }
                 if (msg.contains("22")) { bluetoothUtils?.removePairDevice() }
-                (mContext as Activity).runOnUiThread {
-                    tvInfo?.text = info
-                }
+                tvInfo?.text = info
             }
         })
 
