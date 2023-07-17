@@ -1,4 +1,4 @@
-package com.bdtd.ccg
+package com.bdtd.ccg.utils
 
 /**
  * JD5数据转换

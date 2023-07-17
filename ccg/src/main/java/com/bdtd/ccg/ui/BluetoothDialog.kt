@@ -1,4 +1,4 @@
-package com.bdtd.ccg
+package com.bdtd.ccg.ui
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -14,8 +14,13 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bdtd.ccg.R
 import com.bdtd.ccg.common.HexUtil
 import com.bdtd.ccg.common.ProtocolUtil
+import com.bdtd.ccg.model.BluetoothDevModel
+import com.bdtd.ccg.model.JD5ReceiveModel
+import com.bdtd.ccg.utils.BluetoothClientUtils
+import com.bdtd.ccg.utils.JD5ConvertUtils
 
 class BluetoothDialog private constructor() {
     private val TAG = "BluetoothDialog"
@@ -136,6 +141,7 @@ class BluetoothDialog private constructor() {
             override fun logInfo(msg: String) {
                 var info = ""
                 if (msg.contains("257")) { info = "${msg}(短时间内连接次数过多)" } else { info = msg }
+                if (msg.contains("22")) { bluetoothUtils?.removePairDevice() }
                 tvInfo?.text = info
             }
         })

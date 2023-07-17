@@ -1,4 +1,4 @@
-package com.bdtd.ccg
+package com.bdtd.ccg.model
 
 import android.annotation.SuppressLint
 import android.bluetooth.BluetoothDevice

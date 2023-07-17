@@ -1,10 +1,11 @@
-package com.bdtd.ccg
+package com.bdtd.ccg.ui
 
 import android.app.Dialog
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
+import com.bdtd.ccg.R
 
 class TipDialog private constructor() {
     private var mListener: OnTipDialogListener? = null

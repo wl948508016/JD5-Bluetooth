@@ -1,4 +1,4 @@
-package com.bdtd.ccg
+package com.bdtd.ccg.model
 
 data class JD5ReceiveModel(
 

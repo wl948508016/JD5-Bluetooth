@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.bdtd.ccgtest"
-        minSdk 21
+        minSdk 23
         targetSdk 30
         versionCode 2
         versionName "1.0.1"
@@ -37,11 +37,9 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.3.0'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-//    implementation project(path: ':ccg')
     implementation 'com.github.wl948508016:JD5-Bluetooth:1.0.0'
+    implementation project(path: ':ccg')
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-
-    implementation 'com.github.getActivity:XXPermissions:13.6' // 动态权限
 }
