@@ -107,11 +107,15 @@ class BluetoothDialog private constructor() {
     private fun initBluetoothListener() {
         bluetoothUtils?.setConnectListener(object : BluetoothClientUtils.BluetoothConnectListener {
             override fun scanResult(dev: BluetoothDevModel) {
-                adapter?.addData(dev)
+                (mContext as Activity).runOnUiThread {
+                    adapter?.addData(dev)
+                }
             }
 
             override fun scanStop() {
-                tvInfo?.text = "扫描结束"
+                (mContext as Activity).runOnUiThread {
+                    tvInfo?.text = "扫描结束"
+                }
             }
 
             override fun connected() {
@@ -142,7 +146,9 @@ class BluetoothDialog private constructor() {
                 var info = ""
                 if (msg.contains("257")) { info = "${msg}(短时间内连接次数过多)" } else { info = msg }
                 if (msg.contains("22")) { bluetoothUtils?.removePairDevice() }
-                tvInfo?.text = info
+                (mContext as Activity).runOnUiThread {
+                    tvInfo?.text = info
+                }
             }
         })
 
