@@ -14,3 +14,23 @@ k
 settings.gradle,0/5/05efc8b1657769a27696d478ded1e95f38737233
 P
  ccg/src/main/AndroidManifest.xml,e/0/e0e91eb6263d5fc4198eac33dab303c28c8e8b79
+g
+7ccg/src/main/java/com/bdtd/ccg/utils/JD5ConvertUtils.kt,7/6/767a6cfd0768e30126abac7076506478de7dfbf1
+b
+2app/src/main/java/com/bdtd/ccgtest/MainActivity.kt,8/d/8d395f4be7a3d42015c97c1c237baf36048e0e16
+@
+ccg/build.gradle,8/8/88a506a875ac1cc9f020b9cfbd0bfd4f71229966
+@
+app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
+P
+ app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
+l
+<ccg/src/main/java/com/bdtd/ccg/utils/BluetoothHelpUtils.java,7/1/71f8000f6457b7e1d79e67425957b8f8a26c54d1
+l
+<ccg/src/main/java/com/bdtd/ccg/utils/BluetoothClientUtils.kt,e/7/e7f0ef836bd269a5789a1cca38456e0b3e560b98
+d
+4ccg/src/main/java/com/bdtd/ccg/ui/BluetoothDialog.kt,9/d/9d756132b30e206e2b5192b64f2cff0ff735ced3
+]
+-ccg/src/main/java/com/bdtd/ccg/CcgHelper.java,e/5/e5615ea18d688cbe2e58c411e3666e110455fa36
+]
+-ccg/src/main/java/com/bdtd/ccg/CcgHelperKt.kt,e/b/eb4c7ef0abe4142401868e26b38001b37173349b
