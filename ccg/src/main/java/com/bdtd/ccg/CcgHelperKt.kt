@@ -1,6 +1,8 @@
 package com.bdtd.ccg
 
 import android.content.Context
+import android.os.Handler
+import android.os.Looper
 import com.bdtd.ccg.model.JD5ReceiveModel
 import com.bdtd.ccg.ui.BluetoothDialog
 import com.bdtd.ccg.utils.BluetoothClientUtils
@@ -27,22 +29,38 @@ class CcgHelperKt private constructor() {
      * @CreateDate:  2023/7/10 15:39
      */
     fun openBluetoothDialog(context: Context, autoRead: Boolean, listener: OnCcgHelperKtListener?) {
-//    fun openBluetoothDialog(context: Context, autoRead: Boolean) {
-        PermissionUtils.instance.requestPermission(context, object : PermissionUtils.OnPermissionUtilsListener {
-            override fun onPermissionSuccess() {
-                val bluetoothUtils = BluetoothClientUtils.instance
-                bluetoothUtils.initBlueTooth(context)
-                if (bluetoothUtils.isSupport()) {
-                    BluetoothDialog.instance.show(context, bluetoothUtils, autoRead)
-                    BluetoothDialog.instance.getConnectedDev()
-                    BluetoothDialog.instance.setJD5DialogListener(object : BluetoothDialog.JD5DialogListener {
-                        override fun fillData(data: JD5ReceiveModel) {
-                            listener?.onResultData(data.methaneVal, data.co, data.o2, data.temp, data.co2)
-                        }
-                    })
-                }
+        // RN存在bug，打开弹窗时，需要在主线程中打开。
+        // 如果未使用Handler(Looper.getMainLooper()).post{}，在刷新蓝牙弹窗时，即使执行runOnUiThread也不会起作用
+        Handler(Looper.getMainLooper()).post {
+            val bluetoothUtils = BluetoothClientUtils.instance
+            bluetoothUtils.initBlueTooth(context)
+            if (bluetoothUtils.isSupport()) {
+                BluetoothDialog.instance.show(context, bluetoothUtils, autoRead)
+                BluetoothDialog.instance.getConnectedDev()
+                BluetoothDialog.instance.setJD5DialogListener(object : BluetoothDialog.JD5DialogListener {
+                    override fun fillData(data: JD5ReceiveModel) {
+                        listener?.onResultData(data.methaneVal, data.co, data.o2, data.temp, data.co2)
+                    }
+                })
             }
-        })
+        }
+//        PermissionUtils.instance.requestPermission(context, object : PermissionUtils.OnPermissionUtilsListener {
+//            override fun onPermissionSuccess() {
+//                Handler(Looper.getMainLooper()).postDelayed({
+//                    val bluetoothUtils = BluetoothClientUtils.instance
+//                    bluetoothUtils.initBlueTooth(context)
+//                    if (bluetoothUtils.isSupport()) {
+//                        BluetoothDialog.instance.show(context, bluetoothUtils, autoRead)
+//                        BluetoothDialog.instance.getConnectedDev()
+//                        BluetoothDialog.instance.setJD5DialogListener(object : BluetoothDialog.JD5DialogListener {
+//                            override fun fillData(data: JD5ReceiveModel) {
+//                                listener?.onResultData(data.methaneVal, data.co, data.o2, data.temp, data.co2)
+//                            }
+//                        })
+//                    }
+//                }, 200)
+//            }
+//        })
     }
 
     /**

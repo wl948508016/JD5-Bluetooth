@@ -15,4 +15,13 @@
         android:text="打开蓝牙弹窗"
         />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnOpenForJava"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btnOpenBluetoothDialog"
+        app:layout_constraintEnd_toStartOf="parent"
+        android:text="使用java代码打开"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

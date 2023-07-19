@@ -107,15 +107,11 @@ class BluetoothDialog private constructor() {
     private fun initBluetoothListener() {
         bluetoothUtils?.setConnectListener(object : BluetoothClientUtils.BluetoothConnectListener {
             override fun scanResult(dev: BluetoothDevModel) {
-                (mContext as Activity).runOnUiThread {
-                    adapter?.addData(dev)
-                }
+                adapter?.addData(dev)
             }
 
             override fun scanStop() {
-                (mContext as Activity).runOnUiThread {
-                    tvInfo?.text = "扫描结束"
-                }
+                tvInfo?.text = "扫描结束"
             }
 
             override fun connected() {
@@ -218,6 +214,7 @@ class BluetoothDialog private constructor() {
     private fun fillData() {
         if (connected && checkSuccess) {
             mListener?.fillData(curData!!)
+            mListener = null
             dialog?.cancel()
         }
     }

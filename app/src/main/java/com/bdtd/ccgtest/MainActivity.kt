@@ -1,5 +1,6 @@
 package com.bdtd.ccgtest
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -9,6 +10,7 @@ import com.bdtd.ccg.CcgHelperKt
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     private var btnOpenBluetoothDialog: AppCompatButton? = null
+    private var btnOpenForJava: AppCompatButton? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,8 +20,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun initView() {
         btnOpenBluetoothDialog = findViewById(R.id.btnOpenBluetoothDialog)
+        btnOpenForJava = findViewById(R.id.btnOpenForJava)
 
         btnOpenBluetoothDialog?.setOnClickListener(this)
+        btnOpenForJava?.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -43,6 +47,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                                 "co2-->${co2}", Toast.LENGTH_LONG).show()
                     }
                 })
+            }
+            R.id.btnOpenForJava -> {
+                startActivity(Intent(this, TestActivity::class.java))
             }
         }
     }
