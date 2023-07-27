@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "ccgTest"
 include ':app'
 include ':ccg'
+include ':jd4'

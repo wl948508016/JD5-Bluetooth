@@ -24,4 +24,22 @@
         android:text="使用java代码打开"
         />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnOpenJD4Config"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btnOpenForJava"
+        app:layout_constraintEnd_toStartOf="parent"
+        android:text="打开jd4配置页面"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnOpenJD4Server"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btnOpenJD4Config"
+        app:layout_constraintEnd_toStartOf="parent"
+        android:text="打开jd4服务"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
