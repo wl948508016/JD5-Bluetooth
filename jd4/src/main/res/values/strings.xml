@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--JD4多参数便携仪配置-->
+    <string name="portable_settings">JD4多参数便携仪配置</string>
+    <string name="first_wifi_name">第一WiFi SSID：</string>
+    <string name="second_wifi_name">第二WiFi SSID：</string>
+    <string name="third_wifi_name">第三WiFi SSID：</string>
+    <string name="first_wifi_psw">第一WiFi密码：</string>
+    <string name="second_wifi_psw">第二WiFi密码：</string>
+    <string name="third_wifi_psw">第三WiFi密码：</string>
+    <string name="first_wifi_ip">第一WiFi IP地址：</string>
+    <string name="second_wifi_ip">第二WiFi IP地址：</string>
+    <string name="third_wifi_ip">第三WiFi IP地址：</string>
+    <string name="first_subnet">第一WiFi子网掩码：</string>
+    <string name="second_subnet">第二WiFi子网掩码：</string>
+    <string name="third_subnet">第三WiFi子网掩码：</string>
+    <string name="first_gateway">第一WiFi网关：</string>
+    <string name="second_gateway">第二WiFi网关：</string>
+    <string name="third_gateway">第三WiFi网关：</string>
+    <string name="first_dns">第一WiFi DNS：</string>
+    <string name="second_dns">第二WiFi DNS：</string>
+    <string name="third_dns">第三WiFi DNS：</string>
+    <string name="first_wifi_encode">第一WiFi SSID编码</string>
+    <string name="second_wifi_encode">第二WiFi SSID编码</string>
+    <string name="third_wifi_encode">第三WiFi SSID编码</string>
+    <string name="encode_gb2312">GB2312</string>
+    <string name="encode_utf">UTF-8</string>
+    <string name="default_ip">0.0.0.0</string>
+    <string name="static_ip">静态IP：</string>
+    <string name="portable_address">便携仪地址：</string>
+    <string name="server_ip">上报地址IP：</string>
+    <string name="server_port">上报地址端口号：</string>
+    <string name="upload_interval">数据上传间隔：</string>
+    <string name="input_wifi_name">请输入WiFi SSID</string>
+    <string name="input_wifi_psw">请输入WiFi密码</string>
+    <string name="input_static_ip">请输入静态IP</string>
+    <string name="input_gateway">请输入网关</string>
+    <string name="input_subnet">请输入子网掩码</string>
+    <string name="input_upload_address">请输入上报地址IP</string>
+    <string name="input_upload_port">请输入上报地址端口号</string>
+    <string name="input_upload_interval">请输入上报时间间隔秒数</string>
+    <string name="input_portable_address">请输入便携仪地址</string>
+    <string name="config">配置</string>
+    <string name="user_name">用户姓名：</string>
+    <string name="user_no">用户编号：</string>
+    <string name="user_department">用户部门：</string>
+    <string name="input_user_name">请输入用户姓名</string>
+    <string name="input_user_no">请输入用户编号</string>
+    <string name="input_user_department">请输入用户部门</string>
+
+</resources>

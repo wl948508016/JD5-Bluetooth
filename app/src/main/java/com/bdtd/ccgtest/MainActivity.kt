@@ -7,10 +7,13 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import com.bdtd.ccg.CcgHelperKt
+import com.bdtd.jd4.JD4Helper
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     private var btnOpenBluetoothDialog: AppCompatButton? = null
     private var btnOpenForJava: AppCompatButton? = null
+    private var btnOpenJD4Config: AppCompatButton? = null
+    private var btnOpenJD4Server: AppCompatButton? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,9 +24,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun initView() {
         btnOpenBluetoothDialog = findViewById(R.id.btnOpenBluetoothDialog)
         btnOpenForJava = findViewById(R.id.btnOpenForJava)
+        btnOpenJD4Config = findViewById(R.id.btnOpenJD4Config)
+        btnOpenJD4Server = findViewById(R.id.btnOpenJD4Server)
 
         btnOpenBluetoothDialog?.setOnClickListener(this)
         btnOpenForJava?.setOnClickListener(this)
+        btnOpenJD4Config?.setOnClickListener(this)
+        btnOpenJD4Server?.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -50,6 +57,19 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.btnOpenForJava -> {
                 startActivity(Intent(this, TestActivity::class.java))
+            }
+            R.id.btnOpenJD4Config -> {
+                JD4Helper.instance.openJD4Config(this)
+            }
+            R.id.btnOpenJD4Server -> {
+                JD4Helper.instance.openUDPServer(this, object : JD4Helper.OnUDPHelperListener {
+                    override fun logInfo(msg: String) {
+                        Toast.makeText(this@MainActivity, msg, Toast.LENGTH_SHORT).show()
+                    }
+
+                    override fun result(clientIp: String, clientPort: String, methane: String, co: String, o2: String, temp: String) {
+                    }
+                })
             }
         }
     }
